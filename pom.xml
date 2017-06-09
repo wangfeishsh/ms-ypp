@@ -14,6 +14,8 @@
 
 	<modules>
 		<module>ms-config</module>
+		<module>ms-eureka</module>
+		<module>ms-user</module>
 	</modules>
 
 </project>
