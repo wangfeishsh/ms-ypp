@@ -8,6 +8,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Created by nannan on 2017/6/9.
  */
@@ -20,7 +23,9 @@ public class TradeService {
 
     public User user() {
         log.info("user start");
-        Response<User> response = userClient.user(User.builder().id("11").build());
+        Map map = new HashMap();
+        map.put("id","test");
+        Response<User> response = userClient.user(map);
         log.info("user end : {}", JSON.toJSONString(response));
         if (response.isSuccess()) {
             return response.getData();

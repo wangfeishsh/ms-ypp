@@ -5,6 +5,9 @@ import com.ypp.domain.dto.User;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import java.util.Map;
 
 /**
  * Created by nannan on 2017/6/9.
@@ -13,5 +16,5 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public interface UserClient {
 
     @RequestMapping(value = "/v1/user", method = RequestMethod.GET)
-    Response<User> user(User user);
+    Response<User> user(@RequestParam Map map);
 }
